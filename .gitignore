@@ -1,0 +1,24 @@
+# Mac
+.DS_Store
+
+application/cache/*
+!application/cache/index.html
+
+application/logs/*
+!application/logs/index.html
+
+!application/*/.htaccess
+
+composer.lock
+tests/mocks/database/ci_test.sqlite
+
+/vendor
+/node_modules
+/frontend/node_modules
+/frontend/package-lock.json
+/public/build
+
+# IDE Files
+#-------------------------
+/nbproject/
+.idea/*

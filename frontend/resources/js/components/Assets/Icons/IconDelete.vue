@@ -1,0 +1,81 @@
+<template>
+  <icon-base
+    icon-name="delete"
+    :width="width"
+    :height="height"
+    :icon-color="iconColor"
+  >
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <defs></defs>
+      <g id="Icons">
+        <path
+          class="icon-delete-cls-1"
+          d="M20,5V20a3,3,0,0,1-3,3H7a3,3,0,0,1-3-3V5Z"
+        />
+        <path
+          class="icon-delete-cls-2"
+          d="M20,5V15a3,3,0,0,1-3,3H7a3,3,0,0,1-3-3V5Z"
+        />
+      </g>
+      <g data-name="Layer 4" id="Layer_4">
+        <path
+          class="icon-delete-cls-3"
+          d="M13,0H11A3,3,0,0,0,8,3V4H2A1,1,0,0,0,2,6H3V20a4,4,0,0,0,4,4H17a4,4,0,0,0,4-4V6h1a1,1,0,0,0,0-2H16V3A3,3,0,0,0,13,0ZM10,3a1,1,0,0,1,1-1h2a1,1,0,0,1,1,1V4H10Zm9,17a2,2,0,0,1-2,2H7a2,2,0,0,1-2-2V6H19Z"
+        />
+        <path
+          class="icon-delete-cls-3"
+          d="M12,9a1,1,0,0,0-1,1v8a1,1,0,0,0,2,0V10A1,1,0,0,0,12,9Z"
+        />
+        <path
+          class="icon-delete-cls-3"
+          d="M15,18a1,1,0,0,0,2,0V10a1,1,0,0,0-2,0Z"
+        />
+        <path
+          class="icon-delete-cls-3"
+          d="M8,9a1,1,0,0,0-1,1v8a1,1,0,0,0,2,0V10A1,1,0,0,0,8,9Z"
+        />
+      </g>
+    </svg>
+  </icon-base>
+</template>
+
+<style type="text/css">
+.icon-delete-cls-1 {
+  fill: #ed2b2b;
+}
+.icon-delete-cls-2 {
+  fill: #f76565;
+}
+.icon-delete-cls-3 {
+  fill: #6c2e7c;
+}
+</style>
+<script>
+import IconBase from "./IconBase.vue";
+
+export default {
+  props: {
+    iconName: {
+      type: String,
+      default: "box",
+    },
+    width: {
+      type: [Number, String],
+      default: 24,
+    },
+    height: {
+      type: [Number, String],
+      default: 24,
+    },
+    iconColor: {
+      type: String,
+      default: "currentColor",
+    },
+    backgroundColor: {
+      type: Boolean,
+      default: true,
+    },
+  },
+  components: { IconBase },
+};
+</script>

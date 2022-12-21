@@ -1,0 +1,26 @@
+{
+  "private": true,
+  "name": "frontend",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@hyjiacan/vue-slideout": "^3.0.2",
+    "vue": "^3.2.45",
+    "vue-feather": "^2.0.0",
+    "vue-router": "^4.1.6",
+    "vue-toastification": "^2.0.0-rc.5",
+    "vuex": "^4.1.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.0.0",
+    "@vue/compiler-sfc": "^3.2.45",
+    "axios": "^1.2.1",
+    "sass": "^1.32.13",
+    "vite": "^4.0.2",
+    "vite-plugin-live-reload": "^3.0.1"
+  }
+}
