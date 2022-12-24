@@ -6,9 +6,9 @@ const toast = useToast()
 
 const options = {
     position: "top-right",
-    timeout: 3000,
+    timeout: 3500,
     closeOnClick: true,
-    pauseOnFocusLoss: true,
+    pauseOnFocusLoss: false,
     pauseOnHover: true,
     draggable: true,
     draggablePercent: 2,
@@ -20,13 +20,13 @@ const options = {
 };
 
 export const toastr = {
-    i: noti('i'),
-    s: noti('s'),
-    e: noti('e'),
-    w: noti('w')
+    i: alertSwal('i'),
+    s: alertSwal('s'),
+    e: alertSwal('e'),
+    swr: alertSwal('w')
 }
 
-function noti(type) {
+function alertSwal(type) {
     return (message) => {
         return eval(type + '("' + message + '")');
     }

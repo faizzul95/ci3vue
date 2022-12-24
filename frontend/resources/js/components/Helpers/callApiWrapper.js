@@ -4,19 +4,18 @@ import {
     unref,
     watchEffect
 } from 'vue'
+// import { useAuthStore } from '@/stores/auth';
 
 import {
     baseUrl,
 } from 'components/Helpers/url'
 
 import {
-    toastr
-} from "components/Helpers/toastrWrapper";
+    noti,
+    actionNoti
+} from "components/helpers/common";
 
-// import { useAuthStore } from '@/stores/auth';
-
-export async function callApi(method, url, dataObj) {
-
+export async function callApiWrapper(method, url, dataObj) {
     const successStatus = [200, 201];
     const unauthorizedStatus = [401, 403];
     const unknownStatus = [419, 500];
@@ -29,11 +28,12 @@ export async function callApi(method, url, dataObj) {
 
     async function useAxios() {
         try {
+            // let finalUrl = '/api/' + url;
             let finalUrl = baseUrl + 'index.php/' + url;
 
             if (method == 'get') {
-                // finalUrl = finalUrl + '?' + serializeQuery(dataObj);
-                finalUrl = baseUrl + 'index.php/' + url + '/' + dataObj;
+                // finalUrl = baseUrl + 'index.php/' + url + '?' + serializeQuery(dataObj);
+                finalUrl = baseUrl + 'index.php/' + url + '?' + dataObj;
             }
 
             let options = {
@@ -51,8 +51,9 @@ export async function callApi(method, url, dataObj) {
             res.value = await axios(options);
         } catch (e) {
             const response = e.response;
+
             if (isUnauthorized(response.status)) {
-                toastr.e(response.data.message);
+                noti(403, response.data.message);
             } else {
                 if (isError(response.status)) {
                     var error_count = 0;
@@ -80,6 +81,7 @@ export async function callApi(method, url, dataObj) {
 
     function isSuccess(res) {
         const status = typeof res === 'number' ? res : res.status;
+
         return successStatus.includes(status);
     }
 
