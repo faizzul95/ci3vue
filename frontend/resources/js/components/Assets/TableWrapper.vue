@@ -32,13 +32,8 @@
 <script setup>
 import { ref, reactive, toRefs } from "vue";
 import VueTableLite from "vue3-table-lite";
-import { swal } from "@/components/Helpers/swal";
-import {
-  callApi,
-  isSuccess,
-  countData,
-  noti,
-} from "@/components/helpers/common";
+// import { swal } from "helpers/swalWrapper";
+import { callApi, isSuccess, countData, noti } from "helpers/common";
 
 const props = defineProps({
   url: {

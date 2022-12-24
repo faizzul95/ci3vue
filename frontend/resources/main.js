@@ -28,7 +28,7 @@ import '@hyjiacan/vue-slideout/dist/slideout.css';
 import "vue-toastification/dist/index.css";
 
 // HELPER
-// import TableWrapper from "@/js/components/Assets/TableWrapper.vue";
+import TableWrapper from "@/js/components/Assets/TableWrapper.vue";
 import nodata from "@/js/components/Assets/NoDataComponent.vue";
 import UnauthorizedAccess from "@/js/components/Assets/UnauthorizedAccessComponent.vue";
 
@@ -47,7 +47,7 @@ app.use(router)
         newestOnTop: true
     })
     .use(acl)
-    // .component("TableWrapper", TableWrapper)
+    .component("TableWrapper", TableWrapper)
     .component("nodata", nodata)
     .component("unauthorizedAccess", UnauthorizedAccess)
     .mount('#app')

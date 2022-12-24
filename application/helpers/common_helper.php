@@ -4,9 +4,6 @@ if (!defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
 
-use Ozdemir\Datatables\Datatables;
-use Ozdemir\Datatables\DB\CodeigniterAdapter;
-
 if (!function_exists('model')) {
     function model($modelName, $assignName)
     {
@@ -121,6 +118,17 @@ if (!function_exists('message')) {
     }
 }
 
+if (!function_exists('jsonApi')) {
+    function jsonApi($data = NULL)
+    {
+        $code = hasData($data) ? 200 : 404;
+        http_response_code($code);
+        header('Content-Type: application/json');
+        echo json_encode($data, JSON_PRETTY_PRINT);
+        exit;
+    }
+}
+
 if (!function_exists('json')) {
     function json($data = NULL, $type = NULL)
     {
@@ -135,6 +143,17 @@ if (!function_exists('json')) {
                 'id' => NULL,
                 'data' => [],
             ], JSON_PRETTY_PRINT);
+        }
+    }
+}
+
+if (!function_exists('hasData')) {
+    function hasData($data = NULL)
+    {
+        if (isset($data) && ($data != '' || $data != NULL)) {
+            return true;
+        } else {
+            return false;
         }
     }
 }
@@ -257,13 +276,6 @@ function loader($status = true)
                     <img src='" . asset('assets/loader.gif') . "' class='img-fluid mb-3' width='80%'>
                     </center>
                 </div>";
-    }
-}
-
-if (!function_exists('serversideDT')) {
-    function serversideDT()
-    {
-        return new Datatables(new CodeigniterAdapter);
     }
 }
 

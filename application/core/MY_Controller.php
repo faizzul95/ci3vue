@@ -1,8 +1,9 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class MY_Controller extends CI_Controller {
-    
+class MY_Controller extends CI_Controller
+{
+
     /**
      * Defining if the request must an ajax request
      * 
@@ -28,7 +29,7 @@ class MY_Controller extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-        
+
         $this->load->helper('api');
 
         $this->ajax_request_validator();
@@ -53,8 +54,9 @@ class MY_Controller extends CI_Controller {
             // Get current requested method
             $requested_method = $this->router->fetch_method();
 
-            if (!$is_ajax_request &&
-                !empty($ajax_request_only) && 
+            if (
+                !$is_ajax_request &&
+                !empty($ajax_request_only) &&
                 in_array(strtolower($requested_method), $ajax_request_only)
             ) {
                 $error = TRUE;
@@ -72,11 +74,11 @@ class MY_Controller extends CI_Controller {
         foreach ($this->middlewares as $middleware) {
             $name = $middleware['name'];
             $behavior = isset($middleware['behavior'])
-                        ? $middleware['behavior'] 
-                        : NULL;
+                ? $middleware['behavior']
+                : NULL;
             $extras = isset($middleware['extras'])
-                        ? $middleware['extras'] 
-                        : [];
+                ? $middleware['extras']
+                : [];
 
             $run = TRUE;
             if (!empty($behavior)) {
@@ -94,12 +96,12 @@ class MY_Controller extends CI_Controller {
             }
 
             if ($run) {
-                $class_name = ucfirst(strtolower($name)) . '_middleware'; 
+                $class_name = ucfirst(strtolower($name)) . '_middleware';
                 $file_name = $class_name . '.php';
                 $file_path = APPPATH . 'middlewares/' . $file_name;
                 if (file_exists($file_path)) {
                     require $file_path;
-                    $ci =& get_instance();
+                    $ci = &get_instance();
                     $obj = new $class_name($ci, $this, $extras);
                     $obj->run();
                 } else {

@@ -43,6 +43,14 @@ function countData(data) {
     }
 }
 
+function retrieve(res) {
+    if (isDef(res)) {
+        return isset(res.value.data) ? res.value.data : '';
+    } else {
+        return '';
+    }
+}
+
 function isSuccess(res) {
     if (isDef(res)) {
         const successStatus = [200, 201, 302];
@@ -267,5 +275,6 @@ export {
     urlCheck,
     imageUrl,
     asset,
+    retrieve,
     fileUrl,
 }

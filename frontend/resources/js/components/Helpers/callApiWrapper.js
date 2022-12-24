@@ -29,11 +29,12 @@ export async function callApiWrapper(method, url, dataObj) {
     async function useAxios() {
         try {
             // let finalUrl = '/api/' + url;
-            let finalUrl = baseUrl + 'index.php/' + url;
+            // let finalUrl = baseUrl + 'index.php/' + url;
+            let finalUrl = baseUrl + url;
 
             if (method == 'get') {
                 // finalUrl = baseUrl + 'index.php/' + url + '?' + serializeQuery(dataObj);
-                finalUrl = baseUrl + 'index.php/' + url + '?' + dataObj;
+                finalUrl = baseUrl + url + '/' + dataObj;
             }
 
             let options = {
