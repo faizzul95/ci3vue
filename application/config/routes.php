@@ -59,8 +59,8 @@ $route['translate_uri_dashes'] = FALSE;
  * Valid    : site, site/, site/a, site/a/b, site/a/b/etc...
  * Invalid  : sitemap
  */
-$route['^site(\/(.+)?)?'] = 'vue';
-$route['^admin(\/(.+)?)?'] = 'vue';
+// $route['^site(\/(.+)?)?'] = 'vue';
+// $route['^admin(\/(.+)?)?'] = 'vue';
 
 /**
  * We will use manual routes only for the API calls
@@ -71,3 +71,5 @@ $route['^admin(\/(.+)?)?'] = 'vue';
 // $route['api/v1/test-login/(:num)']['GET'] = 'api/v1/test_login/show/$1';
 // $route['api/v1/test-login/(:any)']['POST'] = 'api/v1/auth/test_login/$1';
 // $route['api/(.*)'] = '404';
+
+$route = Luthier\Route::getRoutes();

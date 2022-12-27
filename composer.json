@@ -23,6 +23,7 @@
 		"phpmailer/phpmailer": "^6.6",
 		"voku/anti-xss": "^4.1",
 		"eftec/bladeone": "^4.7.1",
-		"mp091689/dump-die": "^1.0"
+		"mp091689/dump-die": "^1.0",
+		"luthier/luthier": "^1.0"
 	}
 }

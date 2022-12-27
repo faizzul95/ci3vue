@@ -7,7 +7,7 @@ import {
 import BasicLayout from '@/views/BasicLayout.vue'
 
 const admin = [{
-    path: siteUrl + '/site/',
+    path: siteUrl,
     alias: [
         siteUrl,
         baseUrl

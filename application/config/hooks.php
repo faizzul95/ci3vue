@@ -12,7 +12,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
 |
 */
 
-$hook['pre_system'] = [
+$hook = Luthier\Hook::getHooks(
+    [
+        'modules' => [
+            'debug',
+            'auth'
+        ],
+    ]
+);
+
+$preSystem = [
     [
         'class'    => 'environment_hook',
         'function' => 'loadEnv',
@@ -41,22 +50,12 @@ $hook['pre_system'] = [
     ],
 ];
 
+foreach ($preSystem as $hookHelper) {
+    $hook['pre_system'][] = $hookHelper;
+}
+
 $hook['post_controller_constructor'][] = array(
     'function' => 'redirect_ssl',
     'filename' => 'ssl.php',
     'filepath' => 'hooks'
 );
-
-// $hook['pre_system'][] = array(
-//     'class'    => 'maintenance_hook',
-//     'function' => 'offline_check',
-//     'filename' => 'maintenance_hook.php',
-//     'filepath' => 'hooks'
-// );
-
-// $hook['display_override'][] = array(
-//     'class'     => 'Develbar',
-//     'function'  => 'debug',
-//     'filename'  => 'Develbar.php',
-//     'filepath'  => 'third_party/DevelBar/hooks'
-// );

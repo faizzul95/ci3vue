@@ -7,7 +7,7 @@ export default [{
         menu: [{
             title: 'Dashboard',
             icon: 'menu-icon tf-icons ti ti-smart-home',
-            router_name: siteUrl + '/site/dashboard',
+            router_name: siteUrl + 'dashboard',
             class: 'menu-link',
             permissions: [],
             roles: "",
@@ -19,7 +19,7 @@ export default [{
         menu: [{
             title: 'Invoice',
             icon: 'menu-icon tf-icons ti ti-file-dollar',
-            router_name: siteUrl + '/site/about',
+            router_name: siteUrl + 'about',
             class: 'menu-link',
             permissions: [],
             roles: [],
@@ -31,7 +31,7 @@ export default [{
         menu: [{
             title: 'User',
             icon: 'menu-icon tf-icons ti ti-file-dollar',
-            router_name: siteUrl + '/site/user',
+            router_name: siteUrl + 'user',
             class: 'menu-link',
             permissions: [],
             roles: [],

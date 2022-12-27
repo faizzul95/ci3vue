@@ -15,7 +15,7 @@ tests/mocks/database/ci_test.sqlite
 /vendor
 /node_modules
 /frontend/node_modules
-/frontend/package-lock.json
+/package-lock.json
 /public/build
 
 # IDE Files
