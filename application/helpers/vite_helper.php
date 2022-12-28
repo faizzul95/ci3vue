@@ -27,7 +27,8 @@ function vite($entry)
 
 function is_development()
 {
-    return VUE_MODE == 'development';
+    // return VUE_MODE == 'development';
+    return VUE_MODE == !empty($_ENV) ? env('ENVIRONMENT') : 'development';
 }
 
 // ----------------------
@@ -79,17 +80,15 @@ function css_tag($entry)
 
 function get_manifest()
 {
-    $content = file_get_contents(APPPATH . '../public/build/manifest.json');
-
+    $content = file_get_contents(FCPATH . '/public/build/manifest.json');
     return json_decode($content, true);
 }
 
 function asset_url($entry)
 {
     $manifest = get_manifest();
-
     return isset($manifest[$entry])
-        ? base_url('public/build/' . $manifest[$entry]['file'])
+        ? asset('build/' . $manifest[$entry]['file'])
         : '';
 }
 
@@ -100,7 +99,7 @@ function imports_urls($entry)
 
     if (!empty($manifest[$entry]['imports'])) {
         foreach ($manifest[$entry]['imports'] as $imports) {
-            $urls[] = base_url('public/build/' . $manifest[$imports]['file']);
+            $urls[] = asset('build/' . $manifest[$imports]['file']);
         }
     }
 
@@ -114,7 +113,7 @@ function css_urls($entry)
 
     if (!empty($manifest[$entry]['css'])) {
         foreach ($manifest[$entry]['css'] as $file) {
-            $urls[] = base_url('public/build/' . $file);
+            $urls[] = asset('build/' . $file);
         }
     }
 

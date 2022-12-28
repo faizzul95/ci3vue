@@ -40,7 +40,7 @@ export default defineConfig({
 
   build: {
     // output dir for production build
-    outDir: resolve(__dirname, '../public/build'),
+    outDir: resolve(__dirname, './public/build'),
     emptyOutDir: true,
 
     // emit manifest so PHP can find the hashed files
