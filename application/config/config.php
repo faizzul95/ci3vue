@@ -465,8 +465,8 @@ $config['global_xss_filtering'] = FALSE;
 */
 $config['csrf_protection'] = TRUE;
 // $config['csrf_token_name'] = 'csrf_test_name';
-$config['csrf_token_name'] = 'arcaSecurityCsrf';
-$config['csrf_cookie_name'] = 'arcaCookieSecurityCsrf';
+$config['csrf_token_name'] = 'csrf_security_token';
+$config['csrf_cookie_name'] = 'csrf_security_cookie';
 $config['csrf_expire'] = 8600;
 $config['csrf_regenerate'] = FALSE;
 $config['csrf_exclude_uris'] = array();

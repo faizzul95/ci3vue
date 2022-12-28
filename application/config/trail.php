@@ -43,14 +43,10 @@ $config['audit_enable'] = TRUE;
 */
 $config['not_allowed_tables'] = [
     'ci_sessions',
-    'menu',
-    'menu_abilities',
-    'menu_permission',
     'system_logger',
     'system_backup_db',
     'system_audit_trails',
     'system_migrations',
-    'files',
 ];
 
 /*

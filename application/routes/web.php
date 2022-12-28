@@ -24,7 +24,11 @@
 //     luthier_info();
 // })->name('homepage');
 
-Route::get('/user', function () {
+Route::get('/', function () {
+    return view('vue/vueTemplate');
+});
+
+Route::get('/(:any)', function () {
     return view('vue/vueTemplate');
 });
 
