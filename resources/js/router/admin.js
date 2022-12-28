@@ -39,7 +39,7 @@ const admin = [{
         },
         {
             path: 'user',
-            name: 'Login',
+            name: 'User',
             component: () => import("components/Modules/GENERAL/Pages/User.vue"),
             meta: {
                 // auth: true,

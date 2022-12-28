@@ -3,10 +3,12 @@ import {
     createWebHistory
 } from 'vue-router'
 
+import auth from './auth'
 import admin from './admin'
 import notfound from './notfound'
 
 const routes = [
+    ...auth,
     ...admin,
     ...notfound,
 ]

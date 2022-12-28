@@ -24,12 +24,16 @@
 //     luthier_info();
 // })->name('homepage');
 
+Route::get('/auth/(:any)', function () {
+    return render('vue/login_layout', ['title' => 'Login']);
+});
+
 Route::get('/', function () {
-    return render('vue/layout', ['title' => '-']);
+    return render('vue/admin_layout', ['title' => '-']);
 });
 
 Route::get('/(:any)', function () {
-    return render('vue/layout', ['title' => '-']);
+    return render('vue/admin_layout', ['title' => '-']);
 });
 
 Route::set('404_override', function () {

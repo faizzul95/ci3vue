@@ -1,5 +1,5 @@
 <template>
-  <h1 class="title">Example Funtion</h1>
+  <h1 class="title">Example Function</h1>
   <button
     v-if="$can('add-user')"
     class="btn btn-xs btn-info float-end me-2"
