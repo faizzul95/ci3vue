@@ -1,7 +1,20 @@
-@extends('templates.main_blade')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
+<head>
+    <meta charset="utf-8">
+    <meta name="base-url" content="{{ base_url }}">
+    <meta name="app-name" content="{{ env('APP_NAME') }}">
 
-<div id="app"></div>
+    <title> - | {{ env('APP_NAME') }} </title>
+    <link rel="icon" href="{{ asset('images/logo.png') }}">
 
-@endsection
+    {!! vite('main.js') !!}
+
+</head>
+
+<body>
+    <div id="app"></div>
+</body>
+
+</html>

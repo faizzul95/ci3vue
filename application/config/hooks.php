@@ -15,7 +15,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 $hook = Luthier\Hook::getHooks(
     [
         'modules' => [
-            'debug',
+            // 'debug',
             'auth'
         ],
     ]

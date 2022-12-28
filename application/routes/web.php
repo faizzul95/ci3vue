@@ -25,11 +25,11 @@
 // })->name('homepage');
 
 Route::get('/', function () {
-    return view('vue/vueTemplate');
+    return render('vue/layout', ['title' => '-']);
 });
 
 Route::get('/(:any)', function () {
-    return view('vue/vueTemplate');
+    return render('vue/layout', ['title' => '-']);
 });
 
 Route::set('404_override', function () {

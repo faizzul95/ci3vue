@@ -58,7 +58,14 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array('database', 'email', 'session', 'Crud_Logs');
+$autoload['libraries'] = array(
+    'env',
+    'email',
+    'session',
+    'database',
+    'lib_log',
+    'Crud_Logs'
+);
 // 
 /*
 | -------------------------------------------------------------------
@@ -89,25 +96,44 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
+// $autoload['helper'] = array(
+//     'general',
+//     'url',
+//     'form',
+//     'security',
+//     'file',
+//     'common',
+//     'db',
+//     'array_custom',
+//     'blade',
+//     'rbac',
+//     'csrf',
+//     'qr_generator',
+//     'import_excel',
+//     'export',
+//     'upload_canthink',
+//     'mailer_canthink',
+//     'security_canthink',
+//     'vite',
+// );
+
 $autoload['helper'] = array(
+    'env',
+    'ci3',
     'general',
     'url',
     'form',
     'security',
     'file',
-    'common',
-    'db',
-    'array_custom',
-    'blade',
-    'rbac',
-    'csrf',
-    'qr_generator',
-    'import_excel',
-    'export',
-    'upload_canthink',
-    'mailer_canthink',
-    'security_canthink',
+    'custom_db',
+    'custom_array',
+    'custom_plugin',
+    'custom_mailer',
+    'custom_qr_generator',
+    'custom_upload',
+    'custom_session',
     'vite',
+    // 'blade',
 );
 
 /*
